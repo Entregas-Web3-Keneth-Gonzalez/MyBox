@@ -1,0 +1,50 @@
+#---------------------------------------------------------------------
+# Impide navegar en los direcctorios del sitio
+#---------------------------------------------------------------------
+#Options All -Indexes
+
+
+#---------------------------------------------------------------------
+# En caso de error presentar páginas personalizadas
+#---------------------------------------------------------------------
+#ErrorDocument 400 http://10.90.29.126/cholli/mybox/errores/400.php
+#ErrorDocument 403 http://10.90.29.126/cholli/mybox/errores/403.php
+#ErrorDocument 404 http://10.90.29.126/cholli/mybox/errores/404.php
+#ErrorDocument 500 http://10.90.29.126/cholli/mybox/errores/500.php
+
+
+#---------------------------------------------------------------------
+# Evita tener acceso a los archivos con las siguientes extensiones
+#---------------------------------------------------------------------
+#<FilesMatch "(\.(bak|config|inc|ini|log|sh|sql)|~)$">
+#    Order allow,deny
+#    Deny from all
+#    Satisfy All
+#</FilesMatch>
+
+
+#---------------------------------------------------------------------
+# Limitar el tamaño máximo de los archivos subidos a 20MB
+#---------------------------------------------------------------------
+# Este límite es aplicado directamente a los uploads.
+#php_value upload_max_filesize 20M
+#php_value post_max_size 20M
+
+
+#---------------------------------------------------------------------
+# Restringir el acceso solo a tres direcciones IP del laboratorio
+#---------------------------------------------------------------------
+#<RequireAll>
+#    Require ip 192.168.1.101
+#    Require ip 192.168.1.102
+#    Require ip 192.168.1.103
+#</RequireAll>
+
+
+#---------------------------------------------------------------------
+# Puede escribir las siguientes instrucciones en este archivo.
+# Estas directivas fueron escritas en el archivo apache2.conf.
+#---------------------------------------------------------------------
+#RewriteEngine on
+#RewriteCond %{HTTPS} !on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
